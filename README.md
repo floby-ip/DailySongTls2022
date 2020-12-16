@@ -1,21 +1,42 @@
 # Ippon Song Challenge 2
 
-## Project setup
+## Installation
 ```
+git@github.com:simonguillochon/IpponSongChallenge2020.git
 npm install
 ```
 
-### Compiles and hot-reloads for development
+## Lancer en developpement
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+## Deploiement en production
+Compiler le projet en production
 ```
 npm run build
 ```
 
-### Lints and fixes files
+Une fois mise à jour, récupérer la version du package.json
 ```
-npm run lint
+PACKAGE_VERSION=$(cat package.json \
+  | grep version \
+  | head -1 \
+  | awk -F: '{ print $2 }' \
+  | sed 's/[",]//g' \
+  | tr -d '[[:space:]]')
+```
+
+Publier les changements sur la branche gh-pages
+```
+cd dist
+git add -A
+git commit -m $PACKAGE_VERSION
+git push -f git@github.com:simonguillochon/IpponSongChallenge2020.git master:gh-pages
+```
+
+Faire le ménage derrière soi
+```
+cd -
+rm -rf .dist/
 ```
