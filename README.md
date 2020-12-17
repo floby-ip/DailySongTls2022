@@ -1,4 +1,5 @@
 # Ippon Song Challenge 2
+![LoadingScreen screenshot](https://github.com/simonguillochon/IpponSongChallenge2020/blob/master/src/assets/LoadingScreenScreenshot.png "LoadingScreen Screenshot")
 
 ## Installation
 ```
